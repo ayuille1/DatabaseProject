@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Insert Data{% endblock %}
+<div class="container-fluid">
+    {% block content %}
+        <h1>Add a field</h1>
+        <form action='#' method="post">
+            <div class="form-row">
+              <div class="form-group col-md-1">
+                <label for="input_farm_ID">Farm ID</label>
+                <select name="farm_id" id="input_farm_ID" class="form-control" >
+                    {% for farm_id in farm_ids %}
+                      <option>{{farm_id[0]}}</option>
+                    {% endfor %}
+                </select>
+              </div>
+              <div class="form-group col-md-1">
+                <label for="inputAcres">Acres</label>
+                <input type="text" class="form-control" id="inputAcres" placeholder="Ex. 150" name="acres">
+              </div>
+            </div>  
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="input_irrigation">Irrigation</label>
+                    <select name="irrigation" id="input_irrigation" class="form-control">
+                        <option>Above-ground</option>
+                        <option>In-ground</option>
+                        <option>None</option>
+                    </select>
+                </div>    
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Add Field">
+        </form>
+        {%with messages = get_flashed_messages() %} 
+            {% if messages %} 
+                {% for msg in messages %} 
+                    <p>{{msg}}</p> 
+                {% endfor %} 
+            {% endif %} 
+        {% endwith %} 
+    {% endblock %}
+</div>

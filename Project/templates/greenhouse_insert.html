@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Insert Data{% endblock %}
+<div class="container-fluid">
+    {% block content %}
+        <h1>Add a greenhouse</h1>
+        <form action='#' method="post">
+            <div class="form-row">
+
+              <div class="form-group col-md-1">
+                <label for="input_farm_ID">Farm ID</label>
+                <select name="farm_id" id="input_farm_ID" class="form-control" >
+                    {% for farm_id in farm_ids %}
+                      <option>{{farm_id[0]}}</option>
+                    {% endfor %}
+                </select>
+              </div>
+
+              <div class="form-group col-md-1">
+                <label for="input_hydroponics">Hydroponics</label>
+                <select name="hydroponics" id="input_hydroponics" class="form-control">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>  
+              
+            </div>  
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputGrowbeds">Number of Growbeds</label>
+                    <input type="text" class="form-control" id="inputGrowbeds" placeholder="Ex. 30" name="growbeds">
+                </div>
+                
+                <div class="form-group col-md-2">
+                    <label for="inputSqft">Square Feet</label>
+                    <input type="text" class="form-control" id="inputSqft" placeholder="Ex. 150" name="sqft">
+                </div>  
+                
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Add Field">
+        </form>
+        {%with messages = get_flashed_messages() %} 
+            {% if messages %} 
+                {% for msg in messages %} 
+                    <p>{{msg}}</p> 
+                {% endfor %} 
+            {% endif %} 
+        {% endwith %} 
+    {% endblock %}
+</div>

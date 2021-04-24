@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Insert Data{% endblock %}
+<div class="container-fluid">
+    {% block content %}
+        <h1>Add a sale</h1>
+        <form action='#' method="post">
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="input_crop_ID">Crop ID</label>
+                <select name="crop_id" id="input_crop_ID" class="form-control" >
+                    {% for crop_id in crop_ids %}
+                      <option>{{crop_id[0]}}</option>
+                    {% endfor %}
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputPrice">Price per unit</label>
+                <input type="text" class="form-control" id="inputPrice" placeholder="Ex. 0.50; Range: (0.01-9.99)" name="price">
+              </div>
+            </div>  
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputUnitsSold">Number of units sold</label>
+                    <input type="text" class="form-control" id="inputUnitsSold" placeholder="Ex. 50" name="units_sold">
+                </div>    
+            
+                <div class="form-group col-md-2">
+                    <label for="inputSaleDate">Date Sold</label>
+                    <input type="date" class="form-control" id="inputSaleDate" name="date_sold">
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Add Sale">
+        </form>
+        {%with messages = get_flashed_messages() %} 
+            {% if messages %} 
+                {% for msg in messages %} 
+                    <p>{{msg}}</p> 
+                {% endfor %} 
+            {% endif %} 
+        {% endwith %} 
+    {% endblock %}
+</div>

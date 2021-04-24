@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{{ table_nm }}{% endblock %}
+<div class="container-fluid">
+    {% block content %}
+       <h1>{{ table }} Table</h1>
+       <form class="form-inline" action='#' method="post">
+            <label class="my-1 mr-2" for="inlineSort">Sort By</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineSort" name="attr">
+                {% for var in cols %}
+                    <option>{{var[0]}}</option>
+                {% endfor %}
+            </select>
+
+            <label class="my-1 mr-2" for="inlineOrder">Sort By</label>
+            <select class="custom-select my-1 mr-sm-2" id="inlineOrder" name="order">
+                <option>Smallest to largest</option>
+                <option>Largest to smallest</option>
+            </select>
+      
+            <button type="submit" class="btn btn-primary my-1">Sort</button>
+        </form>
+        <table class="table table-striped" style= "background-color: #cacaca;">
+          <thead>
+            <tr>
+              {% for var in cols %}
+                <th scope="col">{{ var[0] }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in data %}
+              <tr>
+                {% for i in num %}
+                    <td>{{ row[i] }}</td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    {% endblock %}
+  </div>

@@ -1,0 +1,12 @@
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (1, 'corn', 30, 0.8);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (2, 'lettuce', 37, 1.03);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (3, 'tomato', 36, 0.68);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (4, 'kale', 37, 0.34);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (5, 'rice', 51, null);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (6, 'corn', 50, 1.33);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (7, 'lettuce', 48, 0.43);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (8, 'tomato', 80, 0.35);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (9, 'kale', 78, 0.67);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (10, 'rice', 45, 0.84);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (11, 'corn', 43, 0.73);
+insert into seed (seed_id, crop_name, germination_time, price_per_lb) values (12, 'lettuce', 64, 1.26);
